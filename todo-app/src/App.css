@@ -1,0 +1,276 @@
+.app {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 48px 16px 64px;
+}
+
+.app-header {
+  margin-bottom: 24px;
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  letter-spacing: -0.5px;
+}
+
+.app-header p {
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.todo-form {
+  display: flex;
+  gap: 8px;
+  background: var(--card);
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(20, 24, 40, 0.05);
+}
+
+.todo-form__text {
+  flex: 1;
+  min-width: 0;
+}
+
+input[type="text"],
+input[type="date"] {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--text);
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: -1px;
+  border-color: transparent;
+}
+
+.btn {
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.15s, opacity 0.15s;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn--primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn--primary:hover:not(:disabled) {
+  background: var(--primary-dark);
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.btn--ghost:hover {
+  background: var(--bg);
+}
+
+.btn--danger {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--danger);
+}
+
+.btn--danger:hover {
+  background: #fef2f2;
+}
+
+.filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0 12px;
+}
+
+.filter-bar__tabs {
+  display: flex;
+  gap: 6px;
+}
+
+.tab {
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.tab:hover {
+  color: var(--text);
+}
+
+.tab--active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.tab--active:hover {
+  color: #fff;
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.link-btn:hover {
+  color: var(--danger);
+}
+
+.todo-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.todo-item__check {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--primary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.todo-item__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.todo-item__text {
+  display: block;
+  word-break: break-word;
+}
+
+.todo-item--done .todo-item__text {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.todo-item__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+  font-size: 0.8rem;
+}
+
+.badge {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--warning-bg);
+  color: var(--warning);
+  font-weight: 500;
+}
+
+.badge--done {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.todo-item__due {
+  color: var(--muted);
+}
+
+.todo-item__due--late {
+  color: var(--danger);
+  font-weight: 500;
+}
+
+.todo-item__actions {
+  display: flex;
+  gap: 6px;
+}
+
+.todo-item__actions .btn {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+}
+
+.todo-item--editing {
+  display: block;
+}
+
+.edit-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.edit-form input[type="text"] {
+  flex: 1;
+  min-width: 160px;
+}
+
+.edit-form__actions {
+  display: flex;
+  gap: 6px;
+}
+
+.empty {
+  text-align: center;
+  color: var(--muted);
+  padding: 40px 0;
+}
+
+@media (max-width: 560px) {
+  .app {
+    padding-top: 28px;
+  }
+
+  .todo-form {
+    flex-wrap: wrap;
+  }
+
+  .todo-form__text {
+    flex-basis: 100%;
+  }
+
+  .todo-form__date {
+    flex: 1;
+  }
+
+  .todo-item {
+    flex-wrap: wrap;
+  }
+
+  .todo-item__actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
